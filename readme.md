@@ -28,7 +28,7 @@ export default function MyProgress() {
 
 ## License
 
-Forked from `react-nanobar`
+Forked from `react-nanobar` and updated to support React 16.8
 
 [MIT][license-url]
 

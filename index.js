@@ -1,51 +1,51 @@
-
-import Nanobar from 'nanobar'
-import React from 'react'
+import Nanobar from 'nanobar';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class ProgressBar extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
-    this.placeholder = null
-    this.nanobar = null
-    this.state = { progress: null }
+    this.placeholder = null;
+    this.nanobar = null;
+    this.state = { progress: null };
   }
 
-  componentDidMount () {
-    const { progress, mountOnBody, className } = this.props
+  componentDidMount() {
+    const { progress, mountOnBody, className } = this.props;
 
-    const nanobar = this.nanobar = new Nanobar({
+    const nanobar = (this.nanobar = new Nanobar({
       classname: className,
-      target: mountOnBody
-        ? null
-        : this.placeholder.parentNode
-    })
+      target: mountOnBody ? null : this.placeholder.parentNode,
+    }));
 
-    nanobar.go(progress)
+    nanobar.go(progress);
   }
 
-  componentWillUnmount () {
-    const el = this.nanobar.el
-    el.parentNode.removeChild(el)
+  componentWillUnmount() {
+    const { el } = this.nanobar;
+    el.parentNode.removeChild(el);
   }
 
-  componentWillReceiveProps (props) {
-    this.nanobar.go(props.progress)
+  componentWillReceiveProps(props) {
+    this.nanobar.go(props.progress);
   }
 
-  render () {
+  render() {
     return (
-      <span ref={(c) => {
-        this.placeholder = c
-      }} />
-    )
+      <span
+        ref={(c) => {
+          this.placeholder = c;
+        }}
+      />
+    );
   }
 }
 
 ProgressBar.propTypes = {
-  progress: React.PropTypes.number.isRequired,
-  mountOnBody: React.PropTypes.bool,
-  className: React.PropTypes.string
-}
+  progress: PropTypes.number.isRequired,
+  mountOnBody: PropTypes.bool,
+  className: PropTypes.string,
+};
 
-export default ProgressBar
+export default ProgressBar;

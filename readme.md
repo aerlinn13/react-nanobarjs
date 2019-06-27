@@ -13,13 +13,13 @@
 ## Installation
 
 ```bash
-> npm install react-nanobar
+> npm install react-nanobarjs
 ```
 
 ## Usage
 
 ```js
-import Nanobar from 'react-nanobar';
+import Nanobar from 'react-nanobarjs';
 
 export default function MyProgress() {
   return <Nanobar progress={60} />;

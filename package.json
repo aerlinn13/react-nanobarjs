@@ -2,12 +2,11 @@
   "name": "react-nanobarjs",
   "version": "1.0.0",
   "description": "Nanobar wrapped up as a React component",
-  "main": "index.out.js",
+  "main": "index.js",
   "module": "index.js",
   "jsnext:main": "index.js",
   "scripts": {
-    "lint": "standard index.js",
-    "prepublish": "npm run lint && babel --presets=es2015 --plugins=transform-react-jsx index.js -o index.out.js",
+    "prepublish": "babel --presets=es2015 --plugins=transform-react-jsx lib.js -o index.js",
     "release": "xyz"
   },
   "keywords": [
@@ -18,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/queckezz/react-nanobar"
+    "url": "https://github.com/aerlinn13/react-nanobarjs"
   },
   "author": "aerlinn13 <danil@chernyshev.pro>",
   "dependencies": {
@@ -27,7 +26,7 @@
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "react": "15.x"
+    "react": "16.8^"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
